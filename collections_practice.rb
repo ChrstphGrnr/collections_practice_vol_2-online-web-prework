@@ -91,6 +91,8 @@ def find_cool(hash)
 cool_hash
 end
       
+      
+      
 def organize_schools(schools)
   schools_in_order = {}
   schools.each do |school_name, location|
@@ -98,17 +100,16 @@ def organize_schools(schools)
     location.each do |key, city|
       schools_in_order[city] = []
     end
-    
   end
-  schools_in_order.each do |cities, school|
-    schools.each do |school_name, location|
-      location.each do |key, city|
-        if cities.include?(city)
-          schools_in_order[city] << school_name
+    schools_in_order.each do |cities, school|
+      schools.each do |school_name, location|
+        location.each do |key, city|
+          if cities.include?(city)
+            schools_in_order[city] << school_name
+          end
         end
       end
     end
-  end
 schools_in_order
 end
 
